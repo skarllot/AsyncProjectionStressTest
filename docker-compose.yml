@@ -5,13 +5,15 @@ services:
       context: .
       dockerfile: src/AsyncProjectionStressTest.Api/Dockerfile
     ports:
-      - "5000:80"
-      - "5001:443"
+      - "80"
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       Marten__ConnectionString: Host=db;Database=postgres;UserId=postgres;Password=APST123;pooling=true;timeout=100;
     depends_on:
       - db
+    deploy:
+      mode: replicated
+      replicas: 5
 
   projection:
     build:
@@ -22,9 +24,23 @@ services:
       Marten__ConnectionString: Host=db;Database=postgres;UserId=postgres;Password=APST123;pooling=true;timeout=100;
     depends_on:
       - db
+    deploy:
+      mode: replicated
+      replicas: 3
+
+  clienttester:
+    build:
+      context: .
+      dockerfile: src/AsyncProjectionStressTest.AutoClientTester/Dockerfile
+    depends_on:
+      - api
+      - projection
+    deploy:
+      mode: replicated
+      replicas: 15
 
   db:
-    image: docker.io/postgres:14
+    image: docker.io/postgres:12
     ports:
       - "5432:5432"
     environment:
