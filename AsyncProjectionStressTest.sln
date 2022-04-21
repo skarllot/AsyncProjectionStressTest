@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D2417EF-0DE8-4388-B19B-8301DD485C4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncProjectionStressTest.Api", "src\AsyncProjectionStressTest.Api\AsyncProjectionStressTest.Api.csproj", "{ACE81568-8078-441F-BA50-C394200B60E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncProjectionStressTest.Common", "src\AsyncProjectionStressTest.Common\AsyncProjectionStressTest.Common.csproj", "{40CEAD3D-65AB-4EAB-A458-350A26AE10EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{96206088-7E83-40B9-ACC3-859B4E06F884}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncProjectionStressTest.EventProjection", "src\AsyncProjectionStressTest.EventProjection\AsyncProjectionStressTest.EventProjection.csproj", "{A43658B1-3DA0-4B95-8C3F-F8586E695777}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACE81568-8078-441F-BA50-C394200B60E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE81568-8078-441F-BA50-C394200B60E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE81568-8078-441F-BA50-C394200B60E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE81568-8078-441F-BA50-C394200B60E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40CEAD3D-65AB-4EAB-A458-350A26AE10EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40CEAD3D-65AB-4EAB-A458-350A26AE10EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40CEAD3D-65AB-4EAB-A458-350A26AE10EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40CEAD3D-65AB-4EAB-A458-350A26AE10EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43658B1-3DA0-4B95-8C3F-F8586E695777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43658B1-3DA0-4B95-8C3F-F8586E695777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43658B1-3DA0-4B95-8C3F-F8586E695777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43658B1-3DA0-4B95-8C3F-F8586E695777}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{ACE81568-8078-441F-BA50-C394200B60E1} = {8D2417EF-0DE8-4388-B19B-8301DD485C4A}
+		{40CEAD3D-65AB-4EAB-A458-350A26AE10EA} = {8D2417EF-0DE8-4388-B19B-8301DD485C4A}
+		{A43658B1-3DA0-4B95-8C3F-F8586E695777} = {8D2417EF-0DE8-4388-B19B-8301DD485C4A}
+	EndGlobalSection
+EndGlobal

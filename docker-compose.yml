@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  api:
+    build:
+      context: .
+      dockerfile: src/AsyncProjectionStressTest.Api/Dockerfile
+    ports:
+      - "5000:80"
+      - "5001:443"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      Marten__ConnectionString: Host=db;Database=postgres;UserId=postgres;Password=APST123;pooling=true;timeout=100;
+    depends_on:
+      - db
+
+  projection:
+    build:
+      context: .
+      dockerfile: src/AsyncProjectionStressTest.EventProjection/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      Marten__ConnectionString: Host=db;Database=postgres;UserId=postgres;Password=APST123;pooling=true;timeout=100;
+    depends_on:
+      - db
+
+  db:
+    image: docker.io/postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: APST123
+    volumes:
+      - db_vol:/var/lib/postgresql/data
+
+volumes:
+  db_vol:
